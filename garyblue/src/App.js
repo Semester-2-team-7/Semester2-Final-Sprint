@@ -1,4 +1,5 @@
 import "./App.css";
+import "./Test.css";
 
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./componet/UI/navbar";

@@ -28,7 +28,7 @@ export default function NavBar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav nav-pills">
             <li className="nav-item">
               <NavLink
                 className="nav-link clickable"
