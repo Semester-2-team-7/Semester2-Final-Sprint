@@ -63,9 +63,11 @@ export default function NavBar() {
               Cart <span class="badge bg-secondary  ">4</span>
             </button>
           </NavLink>
-          <button type="button" className="btn btn-primary btn-lg me-2 ">
-            Login
-          </button>
+          <NavLink className="nav-link clickable " to="/auth">
+            <button type="button" className="btn btn-primary btn-lg me-2 ">
+              Login
+            </button>
+          </NavLink>
         </div>
       </div>
     </nav>
