@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           Gary Blue's Dinner
@@ -20,7 +20,7 @@ export default function NavBar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav nav-pills">
             <li className="nav-item">
               <NavLink
                 className="nav-link clickable"
