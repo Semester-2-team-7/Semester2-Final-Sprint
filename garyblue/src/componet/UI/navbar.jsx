@@ -14,6 +14,9 @@ export const NavBar = () => {
             <NavLink to="/order">Order Now</NavLink>
           </li>
           <li>
+            <NavLink to="/test">Test Me</NavLink>
+          </li>
+          <li>
             <NavLink to="/cart">
               <button>Cart</button>
             </NavLink>
