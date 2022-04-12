@@ -1,33 +1,60 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
-export const NavBar = () => {
+export default function NavBar() {
   return (
-    <header>
-      <Link to="/">Home</Link>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/menu">Menu</NavLink>
-          </li>
-          <li>
-            <NavLink to="/order">Order Now</NavLink>
-          </li>
-          <li>
-            <NavLink to="/test">Test Me</NavLink>
-          </li>
-          <li>
-            <NavLink to="/cart">
-              <button>Cart</button>
-            </NavLink>
-          </li>
-          <li>
-            <button>Sign In</button>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          Gary Blue's Dinner
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <NavLink
+                className="nav-link clickable"
+                aria-current="page"
+                to="/home"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link clickable" to="/menu">
+                Menu
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link clickable" to="/order">
+                Order Now
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link clickable" to="/cart">
+                Cart
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link clickable" to="/test">
+                Log In
+              </NavLink>
+            </li>
+          </ul>
+          <button>Cart</button>
+          <button>Log In</button>
+        </div>
+      </div>
+    </nav>
   );
-};
-
-export default NavBar;
+}
