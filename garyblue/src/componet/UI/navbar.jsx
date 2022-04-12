@@ -4,17 +4,17 @@ import Logo from "../../Images/GaryBlueLogo.png";
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img
             src={Logo}
             alt=""
-            width="50rem"
-            height="50rem"
+            width="70rem"
+            height="70rem"
             className="d-inline-block align-text-centre me-3 rounded-circle"
           />
-          Gary Blue's Dinner
+          <h1 className="d-inline">Gary Blue's Dinner</h1>
         </Link>
         <button
           className="navbar-toggler"
@@ -27,40 +27,45 @@ export default function NavBar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav nav-pills">
-            <li className="nav-item">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav me-4 ">
+            <li className="nav-item px-2">
               <NavLink
-                className="nav-link clickable"
+                className="nav-link clickable h3"
                 aria-current="page"
                 to="/home"
               >
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link clickable" to="/menu">
+            <li className="nav-item px-2">
+              <NavLink className="nav-link clickable h3" to="/menu">
                 Menu
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link clickable" to="/order">
+              <NavLink className="nav-link clickable h3" to="/order">
                 Order Now
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link clickable" to="/cart">
-                Cart
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link clickable" to="/test">
-                Log In
+
+            <li className="nav-item px-2">
+              <NavLink className="nav-link clickable h3" to="/test">
+                test
               </NavLink>
             </li>
           </ul>
-          <button>Cart</button>
-          <button>Log In</button>
+          <NavLink className="nav-link clickable " to="/cart">
+            <button type="button" className="btn btn-primary me-2 btn-lg">
+              Cart <span class="badge bg-secondary  ">4</span>
+            </button>
+          </NavLink>
+          <button type="button" className="btn btn-primary btn-lg me-2 ">
+            Login
+          </button>
         </div>
       </div>
     </nav>
