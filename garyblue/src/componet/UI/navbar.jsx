@@ -1,11 +1,19 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import Logo from "../../Images/GaryBlueLogo.png";
 
 export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
+          <img
+            src={Logo}
+            alt=""
+            width="50rem"
+            height="50rem"
+            className="d-inline-block align-text-centre me-3 rounded-circle"
+          />
           Gary Blue's Dinner
         </Link>
         <button
