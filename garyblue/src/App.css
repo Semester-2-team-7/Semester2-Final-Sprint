@@ -2,19 +2,6 @@
   text-align: center;
 }
 
-:root {
-  --color-primary: #0077b6;
-  --color-secondary: #caf0f8;
-  --color-transpartent: rgba(202, 240, 248, 0.85);
-  --color-accent: #ff3400;
-  --color-accent-secondary: #00b4d8;
-  --color-headings: #03045e;
-  --color-body: #918ca4;
-  --color-body-darker: #5c5577;
-  --color-border: #ccc;
-  --border-radius: 30px;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -48,8 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.navbar {
-  background: var(--color-primary);
 }
