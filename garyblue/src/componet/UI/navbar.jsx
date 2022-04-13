@@ -1,8 +1,16 @@
-import React from "react";
+import { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
+import AuthContext from "../../context/auth-context";
 import Logo from "../../Images/GaryBlueLogo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
+  const cartIcon = <FontAwesomeIcon icon={faCartShopping} />;
+  const userIcon = <FontAwesomeIcon icon={faUser} />;
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid">
@@ -51,24 +59,28 @@ export default function NavBar() {
                 Order Now
               </NavLink>
             </li>
-
-            <li className="nav-item px-2">
-              <NavLink className="nav-link clickable h3" to="/test">
-                test
-              </NavLink>
-            </li>
           </ul>
-          <NavLink className="nav-link clickable " to="/cart">
-            <button type="button" className="btn btn-outline-light me-2 btn-lg">
-              Cart <span className="badge bg-primary  ">4</span>
-            </button>
-          </NavLink>
+          {isLoggedIn && (
+            <NavLink className="nav-link clickable " to="/cart">
+              <button
+                type="button"
+                className="btn btn-outline-light me-2 btn-lg"
+              >
+                {cartIcon}
+                <span className="badge bg-primary rounded-circle ms-2  ">
+                  {" "}
+                  10
+                </span>
+              </button>
+            </NavLink>
+          )}
+
           <NavLink className="nav-link clickable " to="/auth">
             <button
               type="button"
               className="btn btn-outline-light btn-lg me-2 "
             >
-              Login
+              {userIcon} Login
             </button>
           </NavLink>
         </div>
