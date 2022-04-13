@@ -8,6 +8,7 @@ import Menu from "./componet/Menu/menu";
 import OrderMenu from "./componet/OrderMenu/order";
 import Cart from "./componet/OrderMenu/cart";
 import TestMe from "./componet/text";
+import AuthPage from "./componet/Auth/AuthPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/order" element={<OrderMenu />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/test" element={<TestMe />}></Route>
+          <Route path="/auth" element={<AuthPage />}></Route>
         </Routes>
       </div>
     </React.Fragment>
