@@ -1,0 +1,13 @@
+$body-bg: red;
+$body-color: yellow;
+
+h1,
+h3 {
+  color: black;
+}
+
+.bg-dark {
+  background-color: dodgerblue;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

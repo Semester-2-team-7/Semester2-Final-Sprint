@@ -4,7 +4,7 @@ import Logo from "../../Images/GaryBlueLogo.png";
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img
@@ -27,7 +27,7 @@ export default function NavBar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav nav-pills">
             <li className="nav-item">
               <NavLink
@@ -59,8 +59,8 @@ export default function NavBar() {
               </NavLink>
             </li>
           </ul>
-          <button>Cart</button>
-          <button>Log In</button>
+          <button type="button" class="btn btn-primary btn-sm">Cart</button>
+          <button type="button" class="btn btn-primary btn-sm">Log In</button>
         </div>
       </div>
     </nav>
