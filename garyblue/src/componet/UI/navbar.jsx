@@ -33,7 +33,7 @@ export default function NavBar() {
               <NavLink
                 className="nav-link clickable"
                 aria-current="page"
-                to="/home"
+                to="/"
               >
                 Home
               </NavLink>
