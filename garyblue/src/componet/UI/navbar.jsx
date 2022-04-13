@@ -59,12 +59,12 @@ export default function NavBar() {
             </li>
           </ul>
           <NavLink className="nav-link clickable " to="/cart">
-            <button type="button" className="btn btn-primary me-2 btn-lg">
-              Cart <span class="badge bg-secondary  ">4</span>
+            <button type="button" className="btn btn-outline-light me-2 btn-lg">
+              Cart <span class="badge bg-primary  ">4</span>
             </button>
           </NavLink>
           <NavLink className="nav-link clickable " to="/auth">
-            <button type="button" className="btn btn-primary btn-lg me-2 ">
+            <button type="button" className="btn btn-outline-light btn-lg me-2 ">
               Login
             </button>
           </NavLink>
