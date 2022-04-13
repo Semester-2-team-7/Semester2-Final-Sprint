@@ -98,101 +98,109 @@ const Menu = () => {
     setDspList(list);
   }
 
-  return (
-    <div>
-      <h1 style={{ marginTop: "2rem" }}>
-        <span>
-          <img
-            src="https://images.unsplash.com/photo-1511421616335-5a9846f1afcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-            alt="Server Pic"
-            width="400rem"
-            height="132rem"
-            class="shadow me-5"
-            style={{
-              borderRadius: "1rem",
-            }}
-          />
-        </span>
-        Our Menu
-        <span>
-          <img
-            src="https://images.unsplash.com/photo-1529808785564-5ea5054b2d68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-            alt="Menu Pic"
-            width="400rem"
-            height="132rem"
-            class="shadow ms-5"
-            style={{
-              borderRadius: "1rem",
-            }}
-          />
-        </span>
-      </h1>
-      <section class="bg-info w-75 p-3 h-25 m-auto">
-        <button
-          type="button"
-          class="btn btn-primary btn-lg me-5"
-          value="c1"
-          onClick={handleClick}
-        >
-          Breakfeast
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary btn-lg me-5"
-          value="c2"
-          onClick={handleClick}
-        >
-          Lunch
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary btn-lg me-5"
-          value="c3"
-          onClick={handleClick}
-        >
-          Dinner
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary btn-lg me-5"
-          value="c4"
-          onClick={handleClick}
-        >
-          Dessert
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary btn-lg me-5"
-          value="c5"
-          onClick={handleClick}
-        >
-          Specials
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary btn-lg"
-          value="c6"
-          onClick={handleClick}
-        >
-          Beverages
-        </button>
-      </section>
-      <div>
-        <section>
-          <select
-            id="select"
-            class="form-select"
-            aria-label="Default select example"
-            onChange={dspSelect}
-          >
-            <option selected>select an item</option>
-            {options}
-          </select>
-        </section>
-        <div>{dspOption}</div>
-      </div>
-    </div>
-  );
-};
+  import React, { useState } from "react";
 
+  const Menu = () => {
+    const [mealtype, setMealType] = useState([
+      { category: "c1", name: "food item 1" },
+      {},
+      {},
+    ]);
+    return (
+      <div>
+        <h1 style={{ marginTop: "2rem" }}>
+          <span>
+            <img
+              src="https://images.unsplash.com/photo-1511421616335-5a9846f1afcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
+              alt="Server Pic"
+              width="400rem"
+              height="132rem"
+              class="shadow me-5"
+              style={{
+                borderRadius: "1rem",
+              }}
+            />
+          </span>
+          Our Menu
+          <span>
+            <img
+              src="https://images.unsplash.com/photo-1529808785564-5ea5054b2d68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+              alt="Menu Pic"
+              width="400rem"
+              height="132rem"
+              class="shadow ms-5"
+              style={{
+                borderRadius: "1rem",
+              }}
+            />
+          </span>
+        </h1>
+        <section class="bg-info w-75 p-3 h-25 m-auto">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg me-5"
+            value="c1"
+            onClick={handleClick}
+          >
+            Breakfeast
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg me-5"
+            value="c2"
+            onClick={handleClick}
+          >
+            Lunch
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg me-5"
+            value="c3"
+            onClick={handleClick}
+          >
+            Dinner
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg me-5"
+            value="c4"
+            onClick={handleClick}
+          >
+            Dessert
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg me-5"
+            value="c5"
+            onClick={handleClick}
+          >
+            Specials
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg"
+            value="c6"
+            onClick={handleClick}
+          >
+            Beverages
+          </button>
+        </section>
+        <div>
+          <section>
+            <select
+              id="select"
+              class="form-select"
+              aria-label="Default select example"
+              onChange={dspSelect}
+            >
+              <option selected>select an item</option>
+              {options}
+            </select>
+          </section>
+          <div>{dspOption}</div>
+        </div>
+      </div>
+    );
+  };
+};
 export default Menu;
