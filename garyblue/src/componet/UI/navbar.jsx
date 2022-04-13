@@ -60,7 +60,7 @@ export default function NavBar() {
           </ul>
           <NavLink className="nav-link clickable " to="/cart">
             <button type="button" className="btn btn-outline-light me-2 btn-lg">
-              Cart <span class="badge bg-primary  ">4</span>
+              Cart <span className="badge bg-primary  ">4</span>
             </button>
           </NavLink>
           <NavLink className="nav-link clickable " to="/auth">
