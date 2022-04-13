@@ -8,29 +8,30 @@ import Banner4 from "../../Images/BannerScroll/StrawberrySquash.webp";
 
 const Home = () => {
   const [bannerScroll, setBannerScroll] = useState([]);
-  const [currentImage, setCurrentImage] = useState();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [arrayLength, setArrayLength] = useState(4);
 
   // Time for banner scroll
   useEffect(() => {
     setBannerScroll([Banner1, Banner2, Banner3, Banner4]);
 
-    setCurrentImage([bannerScroll[0], 0]);
+    // console.log("useEffect ran!!");
+    // console.log(currentIndex);
 
+    setInterval(switchImage, 5000);
+  }, [currentIndex])
 
-    //end of brackets
-  }, [])
+  function switchImage() {
+    if (currentIndex > arrayLength) {
+      setCurrentIndex(0);
+    }
+    else {
+      setCurrentIndex(currentIndex + 1);
+    }
+    return currentIndex;
 
-  // setInterval(() => {
-  //   let currentIndex = currentImage[1] + 1;
+  }
 
-  //   // Making sure index is still in range
-  //   if (currentImage[1] > bannerScroll.length) {
-  //     setCurrentImage([bannerScroll[0], 0]);
-  //   } else {
-  //     setCurrentImage(bannerScroll[currentIndex])
-  //   }
-  //   return currentImage;
-  // },
   return (
     <div>
       <h1 className="tagLine">Come on in, relax , eat and smile</h1>
@@ -38,7 +39,7 @@ const Home = () => {
         <div class="row">
           {/* Banner Scroll goes below */}
           <div class="col-lg"> <img
-            src={bannerScroll[0]}
+            src={bannerScroll[currentIndex]}
             alt=""
             className="img-fluid"
           /></div>
