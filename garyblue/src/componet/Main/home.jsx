@@ -51,7 +51,7 @@ const Home = () => {
           /></div>
         </div>
 
-        <div className="row">
+        <div className={`row ${classes.homeBottom}`}>
           {/* Review scroll goes below */}
           <div className={`col-lg-8 g-col-4 ${classes.box2}`}>
             <div className={`${classes.primColor} ${classes.feedback}`} >Feedback from out Customers...</div><div className={`${classes.primColor} ${classes.totalReviews}`}> 400+ reviews {starIcon}{starIcon}{starIcon}{starIcon}{starHalfIcon} </div>
@@ -66,10 +66,10 @@ const Home = () => {
 
           {/* Service Awards goes below */}
           <div className={`col-lg-4 g-col-4 ${classes.box3}`}>
-            <div className={classes.awards}>
-              <div><span className={classes.awardImage}>{awardIcon}</span> "Top Service Award" 2021</div>
-              <div><span className={classes.awardImage}>{awardIcon}</span> "Top Service Award" 2021</div>
-            </div>
+            <div className={classes.awards}><span className={classes.awardImage}>{awardIcon}</span> 2022 Best Hamburgers in the City</div>
+            <div className={classes.awards}><span className={classes.awardImage}>{awardIcon}</span> 2021 Top Service Award</div>
+            <div className={classes.awards}><span className={classes.awardImage}>{awardIcon}</span> 2021 Best Hamburgers</div>
+            
           </div>
         </div>
 

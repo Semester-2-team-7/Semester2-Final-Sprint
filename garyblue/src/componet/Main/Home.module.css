@@ -8,11 +8,12 @@ body {
   margin-bottom: 2vw;
 }
 
+.homeBottom {
+  min-height: fit-content;
+}
+
 .awards {
-  color: #0077b6;
-  background-color: tomato;
-  /* justify-content: center;
-  align-content: space-between; */
+  align-content: space-between;
 }
 
 .awardImage {
@@ -28,18 +29,26 @@ body {
   display: flex;
 }
 
+.totalReviews {
+  margin-bottom: 1vw;
+}
+
 .feedback {
   font-weight: bold;
   font-size: 1.5rem;
 }
 
-/* .totalReviews {
-  display: inline-block;
-} */
-
 .box2,
 .box3 {
   padding-top: 2vw;
+}
+
+.box3 {
+  color: #0077b6;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
 }
 
 .primColor {
