@@ -1,0 +1,65 @@
+body {
+  background-color: #e5e5e5;
+}
+
+.tagLine {
+  color: #0077b6;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+.awards {
+  color: #0077b6;
+  background-color: tomato;
+  /* justify-content: center;
+  align-content: space-between; */
+}
+
+.awardImage {
+  margin-right: 1vw;
+  color: gold;
+}
+
+.reviews {
+  background-color: lightblue;
+  border: 3px solid #0077b6;
+  border-radius: 30px;
+  padding: 2vw;
+  display: flex;
+}
+
+.feedback {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* .totalReviews {
+  display: inline-block;
+} */
+
+.box2,
+.box3 {
+  padding-top: 2vw;
+}
+
+.primColor {
+  color: #0077b6;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.starColor {
+  color: yellow;
+}
+
+.currentReview {
+  text-align: left;
+  margin-left: 2vw;
+}
+
+.reviewStars {
+  min-width: 125px;
+  align-items: center;
+}

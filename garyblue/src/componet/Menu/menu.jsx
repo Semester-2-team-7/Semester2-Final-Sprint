@@ -98,9 +98,6 @@ const Menu = () => {
     setDspList(list);
   }
 
-  import React, { useState } from "react";
-
-  const Menu = () => {
     const [mealtype, setMealType] = useState([
       { category: "c1", name: "food item 1" },
       {},
@@ -202,5 +199,5 @@ const Menu = () => {
       </div>
     );
   };
-};
+
 export default Menu;
