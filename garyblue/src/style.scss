@@ -1,0 +1,64 @@
+$primary: #0077b6;
+
+// :root {
+//   --color-primary: #0077b6;
+//   --color-secondary: #caf0f8;
+//   --color-transpartent: rgba(202, 240, 248, 0.85);
+//   --color-accent: #ff3400;
+//   --color-accent-secondary: #00b4d8;
+//   --color-headings: #03045e;
+//   --color-body: #918ca4;
+//   --color-body-darker: #5c5577;
+//   --color-border: #ccc;
+//   --border-radius: 30px;
+// }
+
+// Home Page Styling
+.tagLine {
+  color: $primary;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+.awards {
+  color: $primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.reviews {
+  background-color: lightblue;
+  border: 3px solid $primary;
+  border-radius: 30px;
+  padding: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.box2,
+.box3 {
+  padding-top: 2vw;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// :root {
+//   --color-primary: #0077b6;
+//   --color-secondary: #caf0f8;
+//   --color-transpartent: rgba(202, 240, 248, 0.85);
+//   --color-accent: #ff3400;
+//   --color-accent-secondary: #00b4d8;
+//   --color-headings: #03045e;
+//   --color-body: #918ca4;
+//   --color-body-darker: #5c5577;
+//   --color-border: #ccc;
+//   --border-radius: 30px;
+// }
