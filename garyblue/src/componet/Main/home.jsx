@@ -11,43 +11,34 @@ const Home = () => {
 
   // Time for banner scroll
   const [bannerScroll, setBannerScroll] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  let [currentIndex, setCurrentIndex] = useState(0);
   const [arrayLength, setArrayLength] = useState(4);
-
+  
 
   useEffect(() => {
   
     setBannerScroll([Banner1, Banner2, Banner3, Banner4]);
 
-    if (arrayLength == 0) {
-      setArrayLength(bannerScroll.length);
-      console.log(`Array Length: ${bannerScroll.length}`);
-    }
+    // setCurrentIndex(0);
+    // setArrayLength(bannerScroll.length);
 
-    // console.log("useEffect ran!!");
-    // console.log(`Current Index useEffect: ${currentIndex}`);
-    // console.log(`Array Length is: ${arrayLength}`)
+    console.log(`UseEffect CurrentIndex: ${currentIndex}`);
+    // console.log(`UseEffect ArrayLength: ${arrayLength}`);
 
-    setInterval(switchImage, 5000);
+    setInterval(() => {
+
+      console.log(`Before if currentIndex: ${currentIndex}`);
+      if (currentIndex < arrayLength) {
+        setCurrentIndex(currentIndex++);  
+        console.log(`Before else CurrentIndex ${currentIndex}`);
+      } else {
+        setCurrentIndex(currentIndex = 0);
+        console.log(`After else CurrentIndex ${currentIndex}`);
+      }
+    }, 5000)
+
+
   }, [])
-
-  function switchImage(currentIndex) {
-    console.log(`Current Index before IF: ${currentIndex}`)
-    if (currentIndex > arrayLength - 1) {
-      setCurrentIndex(0);
-      console.log("Before If");
-      console.log(currentIndex);
-  
-    }
-    else {
-      setCurrentIndex(currentIndex + 1);
-      console.log("After If");
-      console.log(currentIndex);
-  
-    }
-    return currentIndex;
-
-  }
 
   return (
     <div>
