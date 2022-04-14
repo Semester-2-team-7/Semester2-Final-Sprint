@@ -55,7 +55,10 @@ export default function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link clickable h3" to="/order">
+              <NavLink
+                className="nav-link clickable h3"
+                to={isLoggedIn ? "/order" : "/auth"}
+              >
                 Order Now
               </NavLink>
             </li>
@@ -74,15 +77,25 @@ export default function NavBar() {
               </button>
             </NavLink>
           )}
-
-          <NavLink className="nav-link clickable " to="/auth">
+          {!isLoggedIn && (
+            <NavLink className="nav-link clickable " to="/auth">
+              <button
+                type="button"
+                className="btn btn-outline-light btn-lg me-2 "
+              >
+                {userIcon} Login
+              </button>
+            </NavLink>
+          )}
+          {isLoggedIn && (
             <button
               type="button"
               className="btn btn-outline-light btn-lg me-2 "
+              onClick={authCtx.logout}
             >
-              {userIcon} Login
+              {userIcon} Logout
             </button>
-          </NavLink>
+          )}
         </div>
       </div>
     </nav>
