@@ -1,10 +1,12 @@
 import React from "react";
+import OrderPickUp from "./orderPickUp";
+import Card from "../UI/card";
 
 const OrderMenu = () => {
   return (
-    <div>
-      <h1>Order Now!!!!</h1>
-    </div>
+    <Card>
+      <OrderPickUp />
+    </Card>
   );
 };
 
