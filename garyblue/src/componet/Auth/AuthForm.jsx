@@ -1,10 +1,15 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import AuthContext from "../../context/auth-context";
+import { useNavigate } from "react-router-dom";
 
 import classes from "./AuthForm.module.css";
 
 const AuthForm = () => {
+  const navigate = useNavigate();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
+  const authCtx = useContext(AuthContext);
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setisLoading] = useState(false);
@@ -17,7 +22,6 @@ const AuthForm = () => {
     event.preventDefault();
     const email = emailInputRef.current.value;
     const password = passwordInputRef.current.value;
-    console.log(email);
 
     // can add validation here if we ge time. Basic validation is done
     setisLoading(true);
@@ -61,7 +65,9 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        console.log(data);
+        authCtx.login(data.idToken);
+        navigate("/", { replace: true });
+
         // add in something for successfull request
       })
       .catch((err) => {

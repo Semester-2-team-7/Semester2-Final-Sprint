@@ -8,12 +8,15 @@ import Banner4 from "../../Images/BannerScroll/StrawberrySquash.webp";
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
+
+  // Time for banner scroll
   const [bannerScroll, setBannerScroll] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [arrayLength, setArrayLength] = useState(4);
 
-  // Time for banner scroll
+
   useEffect(() => {
+  
     setBannerScroll([Banner1, Banner2, Banner3, Banner4]);
 
     if (arrayLength == 0) {
