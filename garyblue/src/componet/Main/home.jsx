@@ -4,7 +4,8 @@ import Banner1 from "../../Images/BannerScroll/Garycombo.webp";
 import Banner2 from "../../Images/BannerScroll/BigGaryTuesday.webp";
 import Banner3 from "../../Images/BannerScroll/OnlineOrdering.webp";
 import Banner4 from "../../Images/BannerScroll/StrawberrySquash.webp";
-
+// import { FontAwesomeIcon } from '../@fortawesome/react-fontawesome';
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
   const [bannerScroll, setBannerScroll] = useState([]);
@@ -15,18 +16,31 @@ const Home = () => {
   useEffect(() => {
     setBannerScroll([Banner1, Banner2, Banner3, Banner4]);
 
+    if (arrayLength == 0) {
+      setArrayLength(bannerScroll.length);
+      console.log(`Array Length: ${bannerScroll.length}`);
+    }
+
     // console.log("useEffect ran!!");
-    // console.log(currentIndex);
+    // console.log(`Current Index useEffect: ${currentIndex}`);
+    // console.log(`Array Length is: ${arrayLength}`)
 
     setInterval(switchImage, 5000);
-  }, [currentIndex])
+  }, [])
 
-  function switchImage() {
-    if (currentIndex > arrayLength) {
+  function switchImage(currentIndex) {
+    console.log(`Current Index before IF: ${currentIndex}`)
+    if (currentIndex > arrayLength - 1) {
       setCurrentIndex(0);
+      console.log("Before If");
+      console.log(currentIndex);
+  
     }
     else {
       setCurrentIndex(currentIndex + 1);
+      console.log("After If");
+      console.log(currentIndex);
+  
     }
     return currentIndex;
 
@@ -35,21 +49,22 @@ const Home = () => {
   return (
     <div>
       <h1 className="tagLine">Come on in, relax , eat and smile</h1>
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <div className="row">
           {/* Banner Scroll goes below */}
-          <div class="col-lg"> <img
+          {console.log(`Current Index before Image: ${currentIndex}`)}
+          <div className="col-lg"> <img
             src={bannerScroll[currentIndex]}
             alt=""
             className="img-fluid"
           /></div>
         </div>
 
-        <div class="row">
+        <div className="row">
           {/* Review scroll goes below */}
-          <div class="col-lg-8 g-col-4 box2">
-            <p class="lead align-left" >Feedback from out Customers...</p>
-            <div class="reviews">
+          <div className="col-lg-8 g-col-4 box2">
+            <p className="lead align-left" >Feedback from out Customers...</p>
+            <div className="reviews">
               <span style={{ float: "left" }}> 5/5 <br />stars</span>
               <span>J. Smith, Apr 2022 <br />
               "Customer Service was Excellent! The Staff was friendly and the food tasted great, Definitely would go again</span>
@@ -57,7 +72,7 @@ const Home = () => {
           </div>
 
           {/* Service Awards goes below */}
-          <div class="col-lg-4 g-col-4 box3">
+          <div className="col-lg-4 g-col-4 box3">
             <div className="awards">
               <p>"Top Service Award" 2021</p>
               <p>"Voted Best Burger" 2021</p>
