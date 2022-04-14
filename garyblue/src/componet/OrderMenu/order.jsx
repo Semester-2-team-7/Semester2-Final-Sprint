@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import OrderPickUp from "./orderPickUp";
 import Card from "../UI/card";
+import Categories from "../services/Categories";
 
 const OrderMenu = () => {
   return (
-    <Card>
-      <OrderPickUp />
-    </Card>
+    <React.Fragment>
+      <Card>
+        <OrderPickUp />
+      </Card>
+      <Categories />
+    </React.Fragment>
   );
 };
 
