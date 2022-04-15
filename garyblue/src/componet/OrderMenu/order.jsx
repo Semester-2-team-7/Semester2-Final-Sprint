@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import OrderPickUp from "./orderPickUp";
 import Card from "../UI/card";
 import Categories from "../services/Categories";
+import Meals from "./Meals/meals";
+import MenuCard from "../UI/menuCard";
 
 const OrderMenu = () => {
   return (
@@ -10,6 +12,9 @@ const OrderMenu = () => {
         <OrderPickUp />
       </Card>
       <Categories />
+      <MenuCard>
+        <Meals />
+      </MenuCard>
     </React.Fragment>
   );
 };

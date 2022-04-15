@@ -1,0 +1,72 @@
+.meal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.meal h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #caf0f8;
+  font-size: 1.25rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.menu__body {
+  width: 50ch;
+  color: #5c5577;
+  font-style: italic;
+}
+
+.menu-tab {
+  transition: all 0.2s ease-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.menu-tab .badge {
+  max-height: 3rem;
+  align-self: center;
+  padding-top: 0;
+}
+
+.menu__header {
+  color: #03045e;
+  margin-top: 0;
+}
+
+.menu-tab:hover {
+  transform: scale(1.05);
+  background: rgba(202, 240, 248, 0.85);
+  border-radius: 10px;
+}
+
+/*  Badge */
+.badge {
+  border-radius: 20px;
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+}
+
+.badge--primary {
+  background: var(--color-accent-secondary);
+  color: #fff;
+}
+
+.badge--border {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-size: 3rem;
+}

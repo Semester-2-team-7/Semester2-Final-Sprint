@@ -56,7 +56,6 @@ const Categories = () => {
   };
 
   const categoryList = categories.map((category) => {
-    console.log(category.id);
     return (
       <li
         onClick={() => onItemSelect(category.id)}
