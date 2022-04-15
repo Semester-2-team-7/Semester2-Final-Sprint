@@ -11,6 +11,8 @@ export default function NavBar() {
   const cartIcon = <FontAwesomeIcon icon={faCartShopping} />;
   const userIcon = <FontAwesomeIcon icon={faUser} />;
 
+  // by switching between the isLoggenIn state we can switch what links are displayed based on that state.
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid">
