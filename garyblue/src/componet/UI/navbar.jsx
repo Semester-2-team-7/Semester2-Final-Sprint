@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import AuthContext from "../../context/auth-context";
+import CartContext from "../../context/cart-contex";
 import Logo from "../../Images/GaryBlueLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar(props) {
+  const cartCtx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
   const cartIcon = <FontAwesomeIcon icon={faCartShopping} />;

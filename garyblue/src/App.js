@@ -7,8 +7,8 @@ import Home from "./componet/Main/home";
 import Menu from "./componet/Menu/menu";
 import OrderMenu from "./componet/OrderMenu/order";
 import Cart from "./componet/OrderMenu/Cart/cart";
-
 import AuthPage from "./componet/Auth/AuthPage";
+import CartProvider from "./context/CartProvider";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <React.Fragment>
+    <CartProvider>
       <NavBar onShowCart={showCartHandler} cartIsShown={cartIsShown} />
       <div className="App">
         <Routes>
@@ -44,7 +44,7 @@ function App() {
           <Route path="*" element={<Home />}></Route>
         </Routes>
       </div>
-    </React.Fragment>
+    </CartProvider>
   );
 }
 
