@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+// will delete once import stuff from the data base
 const TestMe = () => {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
