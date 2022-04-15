@@ -73,7 +73,7 @@ const Menu = () => {
       <div style={{ display: "flex" }}>
         {" "}
         <div style={{ width: "25%" }}>
-          <section>
+          {/* <section>
             <select
               id="select"
               class="form-select m-5 border-dark"
@@ -84,7 +84,7 @@ const Menu = () => {
               <option defaultChecked>select an item</option>
               {options}
             </select>
-          </section>
+          </section> */}
           <ul style={{ listStyle: "none" }}>
             <li
               style={{ fontSize: "3rem", color: "#0077B6", fontWeight: "600" }}
@@ -317,7 +317,7 @@ const Menu = () => {
         </button>
       </section>
       <div>
-        {/* <section>
+        <section>
           <select
             id="select"
             class="form-select m-5 border-dark"
@@ -328,7 +328,7 @@ const Menu = () => {
             <option defaultChecked>select an item</option>
             {options}
           </select>
-        </section> */}
+        </section>
         <div>{dspOption}</div>
       </div>
     </div>
