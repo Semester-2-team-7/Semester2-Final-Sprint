@@ -17,24 +17,24 @@ const Home = () => {
 
   //
   const [bannerScroll, setBannerScroll] = useState([]);
-  let [currentIndex, setCurrentIndex] = useState(0);
-  const [arrayLength, setArrayLength] = useState(4);
+  let [currentIndex, setCurrentIndex] = useState(1);
+  let count = 1;
+  let arrayLength = 4;
   
   useEffect(() => {
   
-    setBannerScroll([Banner1, Banner2, Banner3, Banner4]);
-
+   setBannerScroll([Banner1, Banner2, Banner3, Banner4]);
+   
     setInterval(() => {
 
-      console.log(`Before if currentIndex: ${currentIndex}`);
-      if (currentIndex < arrayLength) {
-        setCurrentIndex(currentIndex++);
-        // console.log(`Before else CurrentIndex ${currentIndex}`);
+      if (count < arrayLength - 1) {
+        count++;
       } else {
-        setCurrentIndex(currentIndex = 0);
-        // console.log(`After else CurrentIndex ${currentIndex}`);
+        count = 0;
       }
-    }, 5000)
+
+      setCurrentIndex(currentIndex = count);
+    }, 5000);
 
   }, [])
 
