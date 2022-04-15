@@ -10,11 +10,12 @@ import { faStar, faStarHalf, faAward } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
 
+  // Icons used on page
   const starIcon = <FontAwesomeIcon icon={faStar} />;
   const starHalfIcon = <FontAwesomeIcon icon={faStarHalf} />;
   const awardIcon = <FontAwesomeIcon icon={faAward} />
 
-  // Time for banner scroll
+  //
   const [bannerScroll, setBannerScroll] = useState([]);
   let [currentIndex, setCurrentIndex] = useState(0);
   const [arrayLength, setArrayLength] = useState(4);
@@ -25,9 +26,9 @@ const Home = () => {
 
     setInterval(() => {
 
-      // console.log(`Before if currentIndex: ${currentIndex}`);
+      console.log(`Before if currentIndex: ${currentIndex}`);
       if (currentIndex < arrayLength) {
-        setCurrentIndex(currentIndex++);  
+        setCurrentIndex(currentIndex++);
         // console.log(`Before else CurrentIndex ${currentIndex}`);
       } else {
         setCurrentIndex(currentIndex = 0);
@@ -43,7 +44,7 @@ const Home = () => {
       <div className="container">
         <div className="row">
           {/* Banner Scroll goes below */}
-          {/* {console.log(`Current Index before Image: ${currentIndex}`)} */}
+          {console.log(`Current Index before Image: ${currentIndex}`)}
           <div className="col-lg"> <img
             src={bannerScroll[currentIndex]}
             alt=""
@@ -51,7 +52,7 @@ const Home = () => {
           /></div>
         </div>
 
-        <div className="row">
+        <div className={`row ${classes.homeBottom}`}>
           {/* Review scroll goes below */}
           <div className={`col-lg-8 g-col-4 ${classes.box2}`}>
             <div className={`${classes.primColor} ${classes.feedback}`} >Feedback from out Customers...</div><div className={`${classes.primColor} ${classes.totalReviews}`}> 400+ reviews {starIcon}{starIcon}{starIcon}{starIcon}{starHalfIcon} </div>
@@ -66,10 +67,10 @@ const Home = () => {
 
           {/* Service Awards goes below */}
           <div className={`col-lg-4 g-col-4 ${classes.box3}`}>
-            <div className={classes.awards}>
-              <div><span className={classes.awardImage}>{awardIcon}</span> "Top Service Award" 2021</div>
-              <div><span className={classes.awardImage}>{awardIcon}</span> "Top Service Award" 2021</div>
-            </div>
+            <div className={classes.awards}><span className={classes.awardImage}>{awardIcon}</span> 2022 Best Hamburgers in the City</div>
+            <div className={classes.awards}><span className={classes.awardImage}>{awardIcon}</span> 2021 Top Service Award</div>
+            <div className={classes.awards}><span className={classes.awardImage}>{awardIcon}</span> 2021 Best Hamburgers</div>
+            
           </div>
         </div>
 
