@@ -10,11 +10,12 @@ import { faStar, faStarHalf, faAward } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
 
+  // Icons used on page
   const starIcon = <FontAwesomeIcon icon={faStar} />;
   const starHalfIcon = <FontAwesomeIcon icon={faStarHalf} />;
   const awardIcon = <FontAwesomeIcon icon={faAward} />
 
-  // Time for banner scroll
+  //
   const [bannerScroll, setBannerScroll] = useState([]);
   let [currentIndex, setCurrentIndex] = useState(0);
   const [arrayLength, setArrayLength] = useState(4);
@@ -25,9 +26,9 @@ const Home = () => {
 
     setInterval(() => {
 
-      // console.log(`Before if currentIndex: ${currentIndex}`);
+      console.log(`Before if currentIndex: ${currentIndex}`);
       if (currentIndex < arrayLength) {
-        setCurrentIndex(currentIndex++);  
+        setCurrentIndex(currentIndex++);
         // console.log(`Before else CurrentIndex ${currentIndex}`);
       } else {
         setCurrentIndex(currentIndex = 0);
@@ -43,7 +44,7 @@ const Home = () => {
       <div className="container">
         <div className="row">
           {/* Banner Scroll goes below */}
-          {/* {console.log(`Current Index before Image: ${currentIndex}`)} */}
+          {console.log(`Current Index before Image: ${currentIndex}`)}
           <div className="col-lg"> <img
             src={bannerScroll[currentIndex]}
             alt=""
