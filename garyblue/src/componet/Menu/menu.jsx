@@ -67,8 +67,6 @@ const Menu = () => {
     });
     setDspList(list);
   }
-
-  const dspOption = dspList.map((data) => {
     return (
       <div style={{ display: "flex" }}>
         {" "}
@@ -333,6 +331,5 @@ const Menu = () => {
       </div>
     </div>
   );
-};
 
 export default Menu;

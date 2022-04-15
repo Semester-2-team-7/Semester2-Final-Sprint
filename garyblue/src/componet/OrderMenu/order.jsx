@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import OrderPickUp from "./orderPickUp";
+import Card from "../UI/card";
+import Categories from "../services/Categories";
+import Meals from "./Meals/meals";
+import MenuCard from "../UI/menuCard";
 
 const OrderMenu = () => {
   return (
-    <div>
-      <h1>Order Now!!!!</h1>
-    </div>
+    <React.Fragment>
+      <Card>
+        <OrderPickUp />
+      </Card>
+      <Categories />
+      <MenuCard>
+        <Meals />
+      </MenuCard>
+    </React.Fragment>
   );
 };
 
