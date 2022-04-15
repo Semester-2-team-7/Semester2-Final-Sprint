@@ -3,7 +3,7 @@ import AuthContext from "./context/auth-context";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./componet/UI/navbar";
 import React, { useContext } from "react";
-import Home from "./componet/Main/Home";
+import Home from "./componet/Main/home";
 import Menu from "./componet/Menu/menu";
 import OrderMenu from "./componet/OrderMenu/order";
 import Cart from "./componet/OrderMenu/cart";

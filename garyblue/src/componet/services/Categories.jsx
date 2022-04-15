@@ -23,7 +23,6 @@ const Categories = () => {
         loadedCategories.push({
           id: key,
           name: responseData[key].name,
-          id: key,
         });
       }
       setCategory(loadedCategories);
