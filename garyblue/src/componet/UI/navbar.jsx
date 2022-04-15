@@ -5,7 +5,7 @@ import Logo from "../../Images/GaryBlueLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 
-export default function NavBar() {
+export default function NavBar(props) {
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
   const cartIcon = <FontAwesomeIcon icon={faCartShopping} />;
@@ -69,6 +69,7 @@ export default function NavBar() {
             <NavLink className="nav-link clickable " to="/cart">
               <button
                 type="button"
+                onClick={props.onShowCart}
                 className="btn btn-outline-light me-2 btn-lg"
               >
                 {cartIcon}
