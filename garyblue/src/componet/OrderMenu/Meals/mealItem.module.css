@@ -70,3 +70,7 @@
   -webkit-text-stroke-color: #000;
   font-size: 3rem;
 }
+
+.form {
+  padding-left: 2rem;
+}

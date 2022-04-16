@@ -1,15 +1,26 @@
 import { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import AuthContext from "../../context/auth-context";
+import CartContext from "../../context/cart-contex";
 import Logo from "../../Images/GaryBlueLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 
-export default function NavBar() {
+export default function NavBar(props) {
+  const cartCtx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
+  // reduce function  array and converts into a single value
+  // curValue starts a 0 and increase as called
+  // the item value comes from Cart Context handled in Cart Provider
+
+  const numberOfCartItems = cartCtx.items.reduce((curValue, item) => {
+    return curValue + item.amount;
+  }, 0);
   const isLoggedIn = authCtx.isLoggedIn;
   const cartIcon = <FontAwesomeIcon icon={faCartShopping} />;
   const userIcon = <FontAwesomeIcon icon={faUser} />;
+
+  // by switching between the isLoggenIn state we can switch what links are displayed based on that state.
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -67,12 +78,13 @@ export default function NavBar() {
             <NavLink className="nav-link clickable " to="/cart">
               <button
                 type="button"
+                onClick={props.onShowCart}
                 className="btn btn-outline-light me-2 btn-lg"
               >
                 {cartIcon}
                 <span className="badge bg-primary rounded-circle ms-2  ">
                   {" "}
-                  10
+                  {numberOfCartItems}
                 </span>
               </button>
             </NavLink>

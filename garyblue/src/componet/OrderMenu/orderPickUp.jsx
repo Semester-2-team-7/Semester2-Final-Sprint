@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import classes from "./orderPickUp.module.css";
 import PickUpBox from "./pickUpBox";
 
+// contains the Pick up box with some text
+
 const OrderPickUp = () => {
   return (
     <section className={classes.pick}>
