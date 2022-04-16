@@ -26,7 +26,7 @@ const Home = () => {
       <div className="container">
         <div className="row">
           {/* Banner Scroll goes below */}
-          <div className="col-lg"> 
+        <div className="col-lg"> 
             {/* Adding trial carousle here */}
 
               <Carousel />
