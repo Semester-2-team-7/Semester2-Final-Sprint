@@ -1,15 +1,14 @@
-import React from "react";
 import classes from "./Input.module.css";
-
+import React from "react";
 // reuseable input feature
 
-const Input = (props) => {
+const Input = React.forwardRef((props, ref) => {
   return (
     <div className={classes.input}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input {...props.input} />
+      <input ref={ref} {...props.input} disabled={props.check} />
     </div>
   );
-};
+});
 
 export default Input;

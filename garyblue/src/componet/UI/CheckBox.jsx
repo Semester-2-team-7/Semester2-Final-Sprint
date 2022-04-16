@@ -7,7 +7,14 @@ const Input = (props) => {
   return (
     <div className={classes.input}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input {...props.input} />
+      <input
+        id={props.id}
+        value={props.value}
+        name={props.name}
+        checked={props.check}
+        onChange={props.onCheck}
+        {...props.input}
+      />
     </div>
   );
 };

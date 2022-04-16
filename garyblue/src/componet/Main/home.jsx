@@ -23,7 +23,7 @@ const Home = () => {
     setBannerScroll([Banner1, Banner2, Banner3, Banner4]);
 
     setInterval(() => {
-      console.log(`Before if currentIndex: ${currentIndex}`);
+      // console.log(`Before if currentIndex: ${currentIndex}`);
       if (currentIndex < arrayLength) {
         setCurrentIndex(currentIndex++);
         // console.log(`Before else CurrentIndex ${currentIndex}`);
