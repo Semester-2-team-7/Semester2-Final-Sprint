@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import classes from "./pickUpBox.module.css";
 
+// calculates the date and time values for the pick up window
+// adds the 20 minute pick up window and limits the days to place a order.
+
 const currentDate = new Date().toISOString().split("T")[0];
 
 const addDays = (date, days) => {
@@ -15,8 +18,6 @@ let twentyMinutesLater = new Date();
 twentyMinutesLater.setMinutes(twentyMinutesLater.getMinutes() + 20);
 
 const day = twentyMinutesLater.toLocaleString("en-US").split(",")[1];
-
-console.log(day);
 
 const PickUpBox = () => {
   const [date, setDate] = useState(currentDate);
