@@ -12,6 +12,7 @@ const MealForm = (props) => {
 
   const handleOnCheck = (event) => {
     setIsChecked(!isChecked);
+
     const enteredAmount = amountInputRef.current.value;
     const enteredAmountNumber = +enteredAmount;
     if (

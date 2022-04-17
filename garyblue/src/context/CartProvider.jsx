@@ -9,7 +9,6 @@ const CartProvider = (props) => {
     const newList = itemList.concat(item);
     const index = newList.indexOf(item);
     newList[index] = { ...newList[index] };
-
     setItems(newList);
   };
 
@@ -20,11 +19,23 @@ const CartProvider = (props) => {
     setItems(newList);
   };
 
+  const updateItems = items.concat();
+  const newSubtotal = updateItems.map((item) => {
+    let newAmount = item.price * item.amount;
+    return newAmount;
+  });
+  let sum = 0;
+  for (let i = 0; i < newSubtotal.length; i++) {
+    sum += newSubtotal[i];
+  }
+  let tax = sum * 0.15;
+  let total = tax + sum;
+
   const cartContext = {
     items: items,
-    subTotal: 0,
-    tax: 0,
-    totalAmount: 0,
+    subTotal: sum.toFixed(2),
+    tax: tax.toFixed(2),
+    totalAmount: total.toFixed(2),
     addItem: addItemToCartHandler,
     removeitem: removeItemFromCartHandler,
   };
