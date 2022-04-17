@@ -25,13 +25,23 @@ const MealForm = (props) => {
     let price = event.target.value;
     let updatedPrice = +price;
     let amount = updatedPrice * enteredAmountNumber.toFixed(2);
-    cartCtx.addItem({
-      id: event.target.id,
-      item: event.target.name,
-      price: updatedPrice,
-      itemTotal: amount,
-      amount: enteredAmountNumber,
-    });
+    if (!isChecked) {
+      cartCtx.addItem({
+        id: event.target.id,
+        item: event.target.name,
+        price: updatedPrice,
+        itemTotal: amount,
+        amount: enteredAmountNumber,
+      });
+    } else {
+      cartCtx.removeitem({
+        id: event.target.id,
+        item: event.target.name,
+        price: updatedPrice,
+        itemTotal: amount,
+        amount: enteredAmountNumber,
+      });
+    }
   };
 
   return (

@@ -9,15 +9,16 @@ const CartProvider = (props) => {
     const newList = itemList.concat(item);
     const index = newList.indexOf(item);
     newList[index] = { ...newList[index] };
-    console.log(index);
-    console.log(newList);
-
-    // itemList[index] = { ...itemList[index] };
 
     setItems(newList);
   };
 
-  const removeItemFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (item) => {
+    const orginalList = items;
+    const newList = orginalList.filter((i) => i.id !== item.id);
+
+    setItems(newList);
+  };
 
   const cartContext = {
     items: items,
