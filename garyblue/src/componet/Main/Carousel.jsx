@@ -7,7 +7,7 @@ import Banner3 from "../../Images/BannerScroll/OnlineOrdering.webp";
 import Banner4 from "../../Images/BannerScroll/StrawberrySquash.webp";
 
 export default () => (
-  <Carousel autoPlay infiniteLoop interval={5000} showThumbs={false} showStatus={false}>
+  <Carousel autoPlay infiniteLoop interval={5000} showThumbs={false} showStatus={false} >
     <div>
       <img alt="" src={Banner1} />
     </div>

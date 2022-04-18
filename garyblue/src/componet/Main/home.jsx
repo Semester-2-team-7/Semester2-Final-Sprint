@@ -1,36 +1,26 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import classes from "./Home.module.css";
-
-// import Banner1 from "../../Images/BannerScroll/Garycombo.webp";
-// import Banner2 from "../../Images/BannerScroll/BigGaryTuesday.webp";
-// import Banner3 from "../../Images/BannerScroll/OnlineOrdering.webp";
-// import Banner4 from "../../Images/BannerScroll/StrawberrySquash.webp";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf, faAward } from '@fortawesome/free-solid-svg-icons';
-
-
 import Carousel from "./Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import CarouselReviews from "./CarouselReviews";
 
 const Home = () => {
   // Icons used on page
   const starIcon = <FontAwesomeIcon icon={faStar} />;
   const starHalfIcon = <FontAwesomeIcon icon={faStarHalf} />;
-
   const awardIcon = <FontAwesomeIcon icon={faAward} />
   
-  
-   return (
+  return (
 
     <div>
-      {console.log("Page Rendered")}
       <h1 className={classes.tagLine}>Come on in, relax , eat and smile</h1>
       <div className="container">
         <div className="row">
           {/* Banner Scroll goes below */}
-
-          <div className="col-lg"> 
+        <div className="col-lg"> 
             {/* Adding trial carousle here */}
 
               <Carousel />
@@ -42,28 +32,12 @@ const Home = () => {
           {/* Review scroll goes below */}
           <div className={`col-lg-8 g-col-4 ${classes.box2}`}>
 
-            <div className={classes.feedback} >Feedback from out Customers...</div><div className={classes.totalReviews}> 400+ reviews <span className={classes.starColor}>{starIcon}{starIcon}{starIcon}{starIcon}{starHalfIcon}</span></div>
+          <div className={classes.feedback} >Feedback from out Customers...</div>
+          <div className={classes.totalReviews}> 400+ reviews <span className={classes.starColor}>{starIcon}{starIcon}{starIcon}{starIcon}{starHalfIcon}</span></div>
 
-            <div className={classes.reviews}>
-              <div className={`${classes.bold} ${classes.reviewStars}`}>
-                {" "}
-                5/5 <br />{" "}
-                <span className={classes.starColor}>
-                  {starIcon}
-                  {starIcon}
-                  {starIcon}
-                  {starIcon}
-                  {starIcon}
-                </span>{" "}
-              </div>
-              <div className={classes.currentReview}>
-                <div className={classes.bold}> J. Smith, Apr 2022 </div>
-                <div>
-                  "Customer Service was Excellent! The Staff was friendly and
-                  the food tasted great, Definitely would go again
-                </div>
-              </div>
-            </div>
+           <CarouselReviews />
+
+                   
           </div>
 
           {/* Service Awards goes below */}
@@ -85,6 +59,15 @@ const Home = () => {
       </div>
     </div>
   );
-};
+}
+
 
 export default Home;
+
+  // useEffect(() => {
+  //   async function getReviews() {
+  //     const result = await axios("https://react-http-f1a28-default-rtdb.firebaseio.com/reviews.json");
+  //     setReviews(result.data);
+  //        }
+  //   getReviews();
+  // }, [])
