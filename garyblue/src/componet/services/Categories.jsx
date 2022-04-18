@@ -55,6 +55,22 @@ const Categories = (props) => {
     setSelectedCategory(e);
   };
 
+  const handleClear = () => {
+    for (const key in localStorage) {
+      if (key === "token") {
+        console.log("token");
+      } else {
+        console.log("not token");
+        localStorage.removeItem(key);
+      }
+    }
+    // let nextValue;
+    // for (let i = 0; i < localStorage.length; i++) {
+    //   nextValue = localStorage.getItem(localStorage.split("_"));
+    //   console.log(nextValue);
+    // }
+  };
+
   const categoryList = categories.map((category) => {
     return (
       <li
@@ -76,6 +92,9 @@ const Categories = (props) => {
       <ul className="list-group  list-group-horizontal clickable">
         {categoryList}
       </ul>
+      <button onClick={handleClear} className="btn btn-outline-danger ">
+        Clear Menu
+      </button>
     </section>
   );
 };
