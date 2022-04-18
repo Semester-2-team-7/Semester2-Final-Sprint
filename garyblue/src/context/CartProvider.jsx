@@ -9,18 +9,42 @@ const CartProvider = (props) => {
 
   const addItemToCartHandler = (item) => {
     const itemList = [...items];
-
-    const newList = itemList.concat(item);
-    const index = newList.indexOf(item);
-    newList[index] = { ...newList[index] };
-    setItems(newList);
+    let existingList = false;
+    for (let i of itemList) {
+      if (i.id === item.id) {
+        existingList = true;
+        i.amount += item.amount;
+        break;
+      }
+    }
+    if (!existingList) {
+      const newList = itemList.concat(item);
+      const index = newList.indexOf(item);
+      newList[index] = { ...newList[index] };
+      setItems(newList);
+    } else {
+      setItems(itemList);
+    }
   };
 
   const removeItemFromCartHandler = (item) => {
-    const orginalList = items;
-    const newList = orginalList.filter((i) => i.id !== item.id);
-
-    setItems(newList);
+    const itemList = [...items];
+    let listCheck = true;
+    for (let i of itemList) {
+      if (i.id === item.id) {
+        i.amount -= item.amount;
+        if (i.amount === 0) {
+          listCheck = false;
+        }
+        break;
+      }
+    }
+    if (!listCheck) {
+      const newList = itemList.filter((i) => i.id !== item.id);
+      setItems(newList);
+    } else {
+      setItems(itemList);
+    }
   };
 
   useEffect(() => {
@@ -46,7 +70,7 @@ const CartProvider = (props) => {
     tax: tax.toFixed(2),
     totalAmount: total.toFixed(2),
     addItem: addItemToCartHandler,
-    removeitem: removeItemFromCartHandler,
+    removeItem: removeItemFromCartHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
