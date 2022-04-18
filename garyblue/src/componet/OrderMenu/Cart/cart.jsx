@@ -8,6 +8,9 @@ import CartContex from "../../../context/cart-contex";
 const Cart = (props) => {
   const cartCtx = useContext(CartContex);
   const hasItems = cartCtx.items.length > 0;
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {cartCtx.items.map((item) => (
@@ -18,6 +21,7 @@ const Cart = (props) => {
           price={item.price}
           amount={item.amount}
           itemTotal={item.itemTotal}
+          onAdd={cartItemAddHandler.bind(null, item)}
         />
       ))}
     </ul>
