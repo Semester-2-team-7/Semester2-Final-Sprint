@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import classes from "./mealForm.module.css";
 import Input from "../../UI/Input";
 import CheckBox from "../../UI/CheckBox";
@@ -9,6 +9,26 @@ const MealForm = (props) => {
   const [amountisValid, setAmountisValid] = useState(true);
   const cartCtx = useContext(CartContex);
   const [isChecked, setIsChecked] = useState(false);
+
+  const check_id = "check_" + props.id;
+  // const [isChecked, setIsChecked] = useState(() => {
+  //   const saved = localStorage.getItem("checked_" + check_id);
+  //   const initialValue = saved;
+  //   return initialValue || false;
+  // });
+
+  const localStorageName = "checked_" + check_id;
+
+  useEffect(() => {
+    const saved = localStorage.getItem(localStorageName);
+    if (saved) {
+      setIsChecked(JSON.parse(saved));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(localStorageName, JSON.stringify(isChecked));
+  }, [isChecked]);
 
   const handleOnCheck = (event) => {
     setIsChecked(!isChecked);
@@ -35,7 +55,7 @@ const MealForm = (props) => {
         amount: enteredAmountNumber,
       });
     } else {
-      cartCtx.removeitem({
+      cartCtx.removeItem({
         id: event.target.id,
         item: event.target.name,
         price: updatedPrice,
@@ -66,7 +86,7 @@ const MealForm = (props) => {
         label="Add to Cart"
         input={{
           type: "checkbox",
-          id: "check_" + props.id,
+          id: check_id,
           value: props.price,
           name: props.name,
         }}

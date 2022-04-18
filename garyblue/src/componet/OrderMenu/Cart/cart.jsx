@@ -8,6 +8,11 @@ import CartContex from "../../../context/cart-contex";
 const Cart = (props) => {
   const cartCtx = useContext(CartContex);
   const hasItems = cartCtx.items.length > 0;
+
+  const cartItemRemoveHandler = (item) => {
+    cartCtx.removeItem({ ...item, amount: 1 });
+  };
+
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, amount: 1 });
   };
@@ -22,6 +27,7 @@ const Cart = (props) => {
           amount={item.amount}
           itemTotal={item.itemTotal}
           onAdd={cartItemAddHandler.bind(null, item)}
+          onRemove={cartItemRemoveHandler.bind(null, item)}
         />
       ))}
     </ul>
