@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Categories = () => {
+const Categories = (props) => {
   const [categories, setCategory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
@@ -51,6 +51,7 @@ const Categories = () => {
     );
   }
   const onItemSelect = (e) => {
+    props.onSelectCategory(e);
     setSelectedCategory(e);
   };
 
@@ -71,7 +72,7 @@ const Categories = () => {
   });
 
   return (
-    <section className="d-flex justify-content-center ">
+    <section className="d-flex justify-content-center mb-3">
       <ul className="list-group  list-group-horizontal clickable">
         {categoryList}
       </ul>
