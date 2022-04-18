@@ -1,0 +1,25 @@
+.reviews {
+  background-color: lightblue;
+  border: 3px solid #0077b6;
+  border-radius: 30px;
+  padding: 2vw;
+  display: flex;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.reviewStars {
+  min-width: 125px;
+  align-items: center;
+}
+
+.currentReview {
+  text-align: left;
+  margin-left: 2vw;
+}
+
+.starColor {
+  color: yellow;
+}

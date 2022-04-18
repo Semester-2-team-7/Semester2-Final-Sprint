@@ -21,14 +21,6 @@ body {
   color: gold;
 }
 
-.reviews {
-  background-color: lightblue;
-  border: 3px solid #0077b6;
-  border-radius: 30px;
-  padding: 2vw;
-  display: flex;
-}
-
 .totalReviews {
   margin-bottom: 1vw;
 }
@@ -54,20 +46,6 @@ body {
   color: #0077b6;
 }
 
-.bold {
-  font-weight: bold;
-}
-
 .starColor {
   color: yellow;
-}
-
-.currentReview {
-  text-align: left;
-  margin-left: 2vw;
-}
-
-.reviewStars {
-  min-width: 125px;
-  align-items: center;
 }
