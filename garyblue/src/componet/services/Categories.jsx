@@ -55,18 +55,6 @@ const Categories = (props) => {
     setSelectedCategory(e);
   };
 
-  // const handleClear = () => {
-  //   for (const key in localStorage) {
-  //     if (key === "token") {
-  //       console.log("token");
-  //     } else {
-  //       console.log("not token");
-  //       localStorage.removeItem(key);
-  //     }
-  //   }
-
-  // };
-
   const categoryList = categories.map((category) => {
     return (
       <li
@@ -84,13 +72,10 @@ const Categories = (props) => {
   });
 
   return (
-    <section className="d-flex justify-content-center mb-3">
-      <ul className="list-group  list-group-horizontal clickable">
+    <section className="d-flex   justify-content-center mb-3">
+      <ul className="list-group flex-wrap list-group-horizontal clickable">
         {categoryList}
       </ul>
-      {/* <button onClick={handleClear} className="btn btn-outline-danger ">
-        Clear Menu
-      </button> */}
     </section>
   );
 };

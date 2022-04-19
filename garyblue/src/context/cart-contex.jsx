@@ -6,9 +6,11 @@ const CartContex = React.createContext({
   subTotal: 0,
   tax: 0,
   totalAmount: 0,
+  pickUpDate: "",
 
   addItem: (item) => {},
   removeItem: (id) => {},
+  getDate: (day) => {},
 });
 
 export default CartContex;

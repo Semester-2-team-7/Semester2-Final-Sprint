@@ -6,6 +6,7 @@ const CartProvider = (props) => {
   const [tax, setTax] = useState(0);
   const [subTotal, SetSubTotal] = useState(0);
   const [total, setTotal] = useState(0);
+  const [pickupDate, setPickUpDate] = useState("");
 
   const addItemToCartHandler = (item) => {
     const itemList = [...items];
@@ -47,6 +48,10 @@ const CartProvider = (props) => {
     }
   };
 
+  const getDateHandler = (date) => {
+    setPickUpDate(date);
+  };
+
   useEffect(() => {
     const updateItems = items.concat();
     const newSubtotal = updateItems.map((item) => {
@@ -69,8 +74,10 @@ const CartProvider = (props) => {
     subTotal: subTotal.toFixed(2),
     tax: tax.toFixed(2),
     totalAmount: total.toFixed(2),
+    pickUpDate: pickupDate,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    getDate: getDateHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
