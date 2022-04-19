@@ -110,7 +110,7 @@ function StoreReviews() {
 
   return ( 
 
-    <CarouselReviews autoPlay infiniteLoop interval={9000} showThumbs={false} showStatus={false} showArrows={false} showIndicators={false} >
+    <CarouselReviews autoPlay infiniteLoop interval={13000} showThumbs={false} showStatus={false} showArrows={false} showIndicators={false} >
         
       {reviews.map((review) => (
           <div className={classes.reviews}>

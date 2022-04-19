@@ -2,6 +2,7 @@ import "./App.css";
 import AuthContext from "./context/auth-context";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./componet/UI/navbar";
+import Footer from "./componet/UI/Footer";
 import React, { useContext, useState } from "react";
 import Home from "./componet/Main/home";
 import Menu from "./componet/Menu/menu";
@@ -42,7 +43,10 @@ function App() {
             <Route path="/auth" element={<AuthPage />}></Route>
           )}
           <Route path="*" element={<Home />}></Route>
+          <Route path="/footer" element={<Footer />}></Route>
         </Routes>
+        <Footer />
+
       </div>
     </CartProvider>
   );

@@ -63,11 +63,3 @@ const Home = () => {
 
 
 export default Home;
-
-  // useEffect(() => {
-  //   async function getReviews() {
-  //     const result = await axios("https://react-http-f1a28-default-rtdb.firebaseio.com/reviews.json");
-  //     setReviews(result.data);
-  //        }
-  //   getReviews();
-  // }, [])
