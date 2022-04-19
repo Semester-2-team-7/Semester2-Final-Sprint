@@ -28,6 +28,10 @@ const CartProvider = (props) => {
     }
   };
 
+  const clearCarthandler = () => {
+    setItems([]);
+  };
+
   const removeItemFromCartHandler = (item) => {
     const itemList = [...items];
     let listCheck = true;
@@ -78,6 +82,7 @@ const CartProvider = (props) => {
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
     getDate: getDateHandler,
+    clearCart: clearCarthandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
