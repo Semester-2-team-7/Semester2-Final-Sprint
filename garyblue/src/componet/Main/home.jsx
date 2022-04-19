@@ -13,7 +13,7 @@ const Home = () => {
   const starHalfIcon = <FontAwesomeIcon icon={faStarHalf} />;
   const awardIcon = <FontAwesomeIcon icon={faAward} />
   
-  return (
+ return (
 
     <div>
       <h1 className={classes.tagLine}>Come on in, relax , eat and smile</h1>
@@ -32,8 +32,9 @@ const Home = () => {
           {/* Review scroll goes below */}
           <div className={`col-lg-8 g-col-4 ${classes.box2}`}>
 
-          <div className={classes.feedback} >Feedback from out Customers...</div>
-          <div className={classes.totalReviews}> 400+ reviews <span className={classes.starColor}>{starIcon}{starIcon}{starIcon}{starIcon}{starHalfIcon}</span></div>
+          <div className={classes.feedback} >Feedback from our Customers...</div>
+          <div className={classes.totalReviews}>400+ reviews <span className={classes.primColor}>{starIcon}{starIcon}{starIcon}{starIcon}{starHalfIcon}</span></div>
+          <button className={classes.btnLeaveReview}>Leave Your Review! </button>
 
            <CarouselReviews />
 

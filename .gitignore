@@ -2978,3 +2978,5 @@ node_modules/scheduler/umd/scheduler.development.js
 node_modules/scheduler/umd/scheduler.production.min.js
 node_modules/scheduler/umd/scheduler.profiling.min.js
 garyblue/src/componet/Main/Home2.jsx
+garyblue/src/componet/Main/LeaveReview.jsx
+garyblue/src/componet/Main/LeaveReview.module.css

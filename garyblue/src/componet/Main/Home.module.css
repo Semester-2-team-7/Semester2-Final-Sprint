@@ -10,6 +10,7 @@ body {
 
 .homeBottom {
   min-height: fit-content;
+  margin-bottom: 3vw;
 }
 
 .awards {
@@ -18,7 +19,7 @@ body {
 
 .awardImage {
   margin-right: 1vw;
-  color: gold;
+  color: #0077b6;
 }
 
 .totalReviews {
@@ -46,6 +47,20 @@ body {
   color: #0077b6;
 }
 
-.starColor {
-  color: yellow;
+.btnLeaveReview {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #03045e;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  color: #03045e;
+  margin-bottom: 1rem;
+}
+
+.btnLeaveReview:hover,
+.btnLeaveReview:active {
+  background-color: #0077b6;
+  border-color: #0077b6;
+  color: white;
 }
