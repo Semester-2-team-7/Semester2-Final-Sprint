@@ -88,3 +88,8 @@
   text-align: right;
   margin-right: 2rem;
 }
+
+.confirmation {
+  font-size: 1.75rem;
+  color: #0077b6;
+}

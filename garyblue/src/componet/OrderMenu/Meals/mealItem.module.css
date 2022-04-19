@@ -1,11 +1,15 @@
 .meal {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   padding-top: 0.5rem;
-
+  text-align: start;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #ccc;
+}
+
+.meal:first-of-type {
+  border-top: 1px solid #ccc;
 }
 
 .meal h3 {
@@ -73,4 +77,19 @@
 
 .form {
   padding-left: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-tab {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 1rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu__body {
+    width: 40ch;
+  }
 }

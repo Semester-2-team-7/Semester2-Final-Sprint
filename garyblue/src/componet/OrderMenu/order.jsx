@@ -1,7 +1,7 @@
 import React from "react";
 import OrderPickUp from "./orderPickUp";
 import Card from "../UI/card";
-import Categories from "../services/Categories";
+// import Categories from "../services/Categories";
 import Meals from "./Meals/meals";
 import MenuCard from "../UI/menuCard";
 
@@ -11,7 +11,7 @@ const OrderMenu = () => {
       <Card>
         <OrderPickUp />
       </Card>
-      <Categories />
+
       <MenuCard>
         <Meals />
       </MenuCard>

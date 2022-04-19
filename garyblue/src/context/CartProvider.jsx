@@ -6,21 +6,54 @@ const CartProvider = (props) => {
   const [tax, setTax] = useState(0);
   const [subTotal, SetSubTotal] = useState(0);
   const [total, setTotal] = useState(0);
+  const [pickupDate, setPickUpDate] = useState("");
 
   const addItemToCartHandler = (item) => {
     const itemList = [...items];
+    let existingList = false;
+    for (let i of itemList) {
+      if (i.id === item.id) {
+        existingList = true;
+        i.amount += item.amount;
+        break;
+      }
+    }
+    if (!existingList) {
+      const newList = itemList.concat(item);
+      const index = newList.indexOf(item);
+      newList[index] = { ...newList[index] };
+      setItems(newList);
+    } else {
+      setItems(itemList);
+    }
+  };
 
-    const newList = itemList.concat(item);
-    const index = newList.indexOf(item);
-    newList[index] = { ...newList[index] };
-    setItems(newList);
+  const clearCarthandler = () => {
+    setItems([]);
   };
 
   const removeItemFromCartHandler = (item) => {
-    const orginalList = items;
-    const newList = orginalList.filter((i) => i.id !== item.id);
+    const itemList = [...items];
+    let listCheck = true;
+    for (let i of itemList) {
+      if (i.id === item.id) {
+        i.amount -= item.amount;
+        if (i.amount === 0) {
+          listCheck = false;
+        }
+        break;
+      }
+    }
+    if (!listCheck) {
+      const newList = itemList.filter((i) => i.id !== item.id);
+      setItems(newList);
+    } else {
+      setItems(itemList);
+    }
+  };
 
-    setItems(newList);
+  const getDateHandler = (date) => {
+    setPickUpDate(date);
   };
 
   useEffect(() => {
@@ -45,8 +78,11 @@ const CartProvider = (props) => {
     subTotal: subTotal.toFixed(2),
     tax: tax.toFixed(2),
     totalAmount: total.toFixed(2),
+    pickUpDate: pickupDate,
     addItem: addItemToCartHandler,
-    removeitem: removeItemFromCartHandler,
+    removeItem: removeItemFromCartHandler,
+    getDate: getDateHandler,
+    clearCart: clearCarthandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
