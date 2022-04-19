@@ -11,7 +11,7 @@ const OrderMenu = () => {
       <Card>
         <OrderPickUp />
       </Card>
-      {/* <Categories /> */}
+
       <MenuCard>
         <Meals />
       </MenuCard>
