@@ -60,9 +60,7 @@ const PickUpBox = () => {
             />
           </div>
         </form>
-        <span
-          className={classes.time}
-        >{`Pick Up Time: ${cartCtx.pickUpDate}`}</span>
+        <span className={classes.time}>{`Pick Up Time: ${day}`}</span>
       </span>{" "}
     </React.Fragment>
   );
