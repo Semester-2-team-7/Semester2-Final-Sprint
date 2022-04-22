@@ -34,7 +34,7 @@ const Home = () => {
 
           <div className={classes.feedback} >Feedback from our Customers...</div>
           <div className={classes.totalReviews}>400+ reviews <span className={classes.primColor}>{starIcon}{starIcon}{starIcon}{starIcon}{starHalfIcon}</span></div>
-          <button className={classes.btnLeaveReview}>Leave Your Review! </button>
+          {/* <button className={classes.btnLeaveReview}>Leave Your Review! </button> */}
 
            <CarouselReviews />
 
