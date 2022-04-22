@@ -1,0 +1,105 @@
+.homeContainer {
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    286.88deg,
+    #0a0202 4.69%,
+    rgba(58, 58, 58, 0.59) 96.15%
+  );
+}
+
+.box1,
+.box2 {
+  height: 50vh;
+}
+
+.box1 {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+  justify-content: end;
+  overflow: hidden;
+}
+
+.hello {
+  font-size: 6rem;
+}
+
+.name {
+  font-size: 9rem;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.education {
+  height: 16vw;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 94%;
+  padding-bottom: 2vw;
+  background-color: white;
+  color: #c00e0e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.software {
+  font-size: 6rem;
+}
+
+.keyin {
+  font-size: 3rem;
+}
+
+@media (max-width: 1125px) {
+  .hello {
+    font-size: 4rem;
+  }
+
+  .name {
+    font-size: 6rem;
+  }
+
+  .software {
+    font-size: 3rem;
+  }
+
+  .keyin {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .education {
+    padding-top: 10vw;
+    padding-bottom: 13vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .hello {
+    font-size: 2.75rem;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .software {
+    font-size: 1.75rem;
+  }
+
+  .keyin {
+    font-size: 1rem;
+  }
+}

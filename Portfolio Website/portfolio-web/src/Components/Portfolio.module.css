@@ -1,0 +1,108 @@
+.portfolioPage {
+  background-color: #45567d;
+  color: white;
+  padding-top: 10vh;
+}
+
+.headingTwo {
+  font-size: 5rem;
+}
+
+.headingThree {
+  font-size: 3rem;
+  margin-bottom: 5vh;
+}
+
+.containerPortfolioSchool,
+.containerPortfolioOther {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 440px);
+  justify-content: space-evenly;
+}
+
+.projectBox {
+  background-color: grey;
+  color: white;
+  height: 440px;
+  width: 440px;
+  margin-bottom: 12vh;
+  border: none;
+}
+
+.schoolProject1 {
+  width: 100%;
+  height: 85%;
+}
+
+.ProjectImage {
+  max-width: 100%;
+  object-fit: cover;
+  margin-top: 5%;
+}
+
+.projectTextBox {
+  display: flex;
+  flex-direction: column;
+  height: 15%;
+}
+
+.modalTitle {
+  color: black;
+  font-size: 2rem;
+  color: #c00e0e;
+}
+
+.modalText {
+  color: white;
+  font-weight: bold;
+  background-color: #c00e0e;
+}
+
+@media (max-width: 1025px) {
+  .containerPortfolioSchool,
+  .containerPortfolioOther {
+    grid-template-columns: repeat(1, 440px);
+    align-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .projectBox {
+    height: 250px;
+    width: 250px;
+    margin-bottom: 4vh;
+  }
+
+  .containerPortfolioSchool,
+  .containerPortfolioOther {
+    grid-template-columns: repeat(1, 250px);
+  }
+
+  .ProjectImage {
+    margin-top: 1%;
+  }
+
+  .projectTextBox {
+    font-size: 0.75rem;
+    height: 15%;
+    align-content: space-between;
+  }
+
+  .schoolProject1 {
+    height: 78%;
+  }
+
+  .portfolioPage {
+    padding-top: 20%;
+  }
+
+  .headingTwo {
+    font-size: 3rem;
+  }
+
+  .headingThree {
+    font-size: 1.75rem;
+    margin-bottom: 5%;
+  }
+}

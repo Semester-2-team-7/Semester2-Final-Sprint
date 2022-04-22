@@ -1,0 +1,61 @@
+.footer {
+  background-color: #303841;
+  min-height: 18vw;
+  max-height: max-content;
+  color: white;
+}
+
+.letsWork {
+  font-size: 2.25rem;
+  padding-top: 0.5vw;
+}
+
+.contacts {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.SocialImage {
+  height: 32px;
+}
+
+.ContactSpacing {
+  margin-right: 5%;
+}
+
+.FooterBottom {
+  padding-top: 2%;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+}
+
+@media (max-width: 500px) {
+  span.socialText {
+    display: none;
+  }
+
+  .ContactSpacing {
+    margin-right: 15%;
+  }
+
+  .letsWork {
+    font-size: 1.75rem;
+    padding-top: 0.75vw;
+  }
+
+  .CreatedBy {
+    font-size: 0.75rem;
+    padding-bottom: 2vw;
+  }
+}

@@ -1,0 +1,42 @@
+.navBarStyle,
+.menuDropDown a {
+  background-color: #c00e0e;
+  font-size: 2rem;
+}
+
+.navBarStyle {
+  height: 8vh;
+  /* display: flex;
+  align-items: center; */
+}
+
+.navBarStyle a,
+.menuDropDown a {
+  color: white;
+}
+
+.navBarStyle a {
+  margin-right: 4vw;
+}
+
+.menuDropDown {
+  background-color: #c00e0e;
+}
+
+/* .navBarStyle a:visited {
+  color: white;
+}
+
+.navBarStyle a:hover {
+  color: #c00e0e;
+  background-color: white;
+} */
+
+/* .navbar-toggler-icon {
+  background-image: none;
+}
+.navbar-toggler-icon::before {
+  font-family: FontAwesome;
+  content: "\f0c9"; 
+}  */
+/* fa-bars, fa-navicon */
