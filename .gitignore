@@ -2977,8 +2977,14 @@ node_modules/scheduler/umd/scheduler-unstable_mock.production.min.js
 node_modules/scheduler/umd/scheduler.development.js
 node_modules/scheduler/umd/scheduler.production.min.js
 node_modules/scheduler/umd/scheduler.profiling.min.js
+<<<<<<< HEAD
 garyblue/src/componet/Main/home2.jsx
 garyblue/src/componet/Main/LeaveReview.jsx
 garyblue/src/componet/Main/LeaveReview.module.css
 Portfolio Website/portfolio-web-okayVersionFridayAM.zip
 Portfolio Website/.DS_Store
+=======
+garyblue/src/componet/Main/Home2.jsx
+garyblue/src/componet/Main/LeaveReview.jsx
+garyblue/src/componet/Main/LeaveReview.module.css
+>>>>>>> 9cf975dccfc4f764169b9ca21b6c9a4567641daf

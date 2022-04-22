@@ -1,0 +1,66 @@
+body {
+  background-color: #e5e5e5;
+}
+
+.tagLine {
+  color: #0077b6;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+.homeBottom {
+  min-height: fit-content;
+  margin-bottom: 3vw;
+}
+
+.awards {
+  align-content: space-between;
+}
+
+.awardImage {
+  margin-right: 1vw;
+  color: #0077b6;
+}
+
+.totalReviews {
+  margin-bottom: 1vw;
+}
+
+.feedback {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.box2,
+.box3 {
+  padding-top: 2vw;
+}
+
+.box3 {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.primColor {
+  color: #0077b6;
+}
+
+.btnLeaveReview {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #03045e;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  color: #03045e;
+  margin-bottom: 1rem;
+}
+
+.btnLeaveReview:hover,
+.btnLeaveReview:active {
+  background-color: #0077b6;
+  border-color: #0077b6;
+  color: white;
+}

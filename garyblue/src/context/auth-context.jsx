@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// this context allows variables to be passed between many pages. The Loggedin state as one important one
 const AuthContext = React.createContext({
   token: "",
   isLoggedIn: false,
@@ -7,18 +8,22 @@ const AuthContext = React.createContext({
   logout: () => {},
 });
 
+// local storage controls the token that allows the user to stay logged in
+const storageToken = localStorage.getItem("token");
+
 export const AuthContextProvider = (props) => {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(storageToken);
 
   const userIsLoggedIn = !!token;
 
   const loginHandler = (token) => {
-    console.log(token);
     setToken(token);
+    localStorage.setItem("token", token);
   };
 
   const logoutHandler = () => {
     setToken(null);
+    localStorage.setItem("token");
   };
 
   const contextValue = {
