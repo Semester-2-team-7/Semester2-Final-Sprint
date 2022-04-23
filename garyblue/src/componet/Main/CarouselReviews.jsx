@@ -2,16 +2,14 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Carousel as CarouselReviews } from "react-responsive-carousel";
 import classes from "./CarouselReviews.module.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
 
 //Loading reviews from Firebase DB
 
 function StoreReviews() {
   const starIcon = <FontAwesomeIcon icon={faStar} />;
   const starHalfIcon = <FontAwesomeIcon icon={faStarHalf} />;
-
 
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -67,65 +65,134 @@ function StoreReviews() {
   }
 
   function getStars(stars) {
-  
     let starImages = null;
 
     switch (stars) {
       case 5:
-        starImages = <section> {starIcon}{starIcon}{starIcon}{starIcon}{starIcon} </section>
+        starImages = (
+          <section>
+            {" "}
+            {starIcon}
+            {starIcon}
+            {starIcon}
+            {starIcon}
+            {starIcon}{" "}
+          </section>
+        );
         break;
       case 4.5:
-        starImages = <section> {starIcon}{starIcon}{starIcon}{starIcon}{starHalfIcon} </section>
+        starImages = (
+          <section>
+            {" "}
+            {starIcon}
+            {starIcon}
+            {starIcon}
+            {starIcon}
+            {starHalfIcon}{" "}
+          </section>
+        );
         break;
       case 4:
-        starImages = <section> {starIcon}{starIcon}{starIcon}{starIcon} </section>
+        starImages = (
+          <section>
+            {" "}
+            {starIcon}
+            {starIcon}
+            {starIcon}
+            {starIcon}{" "}
+          </section>
+        );
         break;
       case 3.5:
-        starImages = <section> {starIcon}{starIcon}{starIcon}{starHalfIcon} </section>
+        starImages = (
+          <section>
+            {" "}
+            {starIcon}
+            {starIcon}
+            {starIcon}
+            {starHalfIcon}{" "}
+          </section>
+        );
         break;
       case 3:
-        starImages = <section> {starIcon}{starIcon}{starIcon} </section>
+        starImages = (
+          <section>
+            {" "}
+            {starIcon}
+            {starIcon}
+            {starIcon}{" "}
+          </section>
+        );
         break;
       case 2.5:
-        starImages = <section> {starIcon}{starIcon}{starHalfIcon} </section>
+        starImages = (
+          <section>
+            {" "}
+            {starIcon}
+            {starIcon}
+            {starHalfIcon}{" "}
+          </section>
+        );
         break;
       case 2:
-        starImages = <section> {starIcon}{starIcon} </section>
+        starImages = (
+          <section>
+            {" "}
+            {starIcon}
+            {starIcon}{" "}
+          </section>
+        );
         break;
       case 1.5:
-        starImages = <section> {starIcon}{starHalfIcon} </section>
+        starImages = (
+          <section>
+            {" "}
+            {starIcon}
+            {starHalfIcon}{" "}
+          </section>
+        );
         break;
       case 1:
-        starImages = <section> {starIcon} </section>
+        starImages = <section> {starIcon} </section>;
         break;
       case 0.5:
-        starImages = <section> {starHalfIcon} </section>
+        starImages = <section> {starHalfIcon} </section>;
         break;
       default:
-        starImages = <section>  </section>
+        starImages = <section> </section>;
     }
 
-    return starImages
-}
+    return starImages;
+  }
 
-  return ( 
-
-    <CarouselReviews autoPlay infiniteLoop interval={13000} showThumbs={false} showStatus={false} showArrows={false} showIndicators={false} >
-        
+  return (
+    <CarouselReviews
+      autoPlay
+      infiniteLoop
+      interval={13000}
+      showThumbs={false}
+      showStatus={false}
+      showArrows={false}
+      showIndicators={false}
+    >
       {reviews.map((review) => (
-          <div className={classes.reviews}>
-          <div className={`${classes.bold} ${classes.reviewStars}`}> {review.rating}/5 <br /> <span className={classes.starColor}>{getStars(review.rating) }</span> </div>
-              <div className={classes.currentReview}>
-                <div className={classes.bold}> {`${review.name}, ${review.date}`} </div>
-              <div>
-              {review.review} 
-            </div>
-            </div>
+        <div key={review.id} className={classes.reviews}>
+          <div className={`${classes.bold} ${classes.reviewStars}`}>
+            {" "}
+            {review.rating}/5 <br />{" "}
+            <span className={classes.starColor}>{getStars(review.rating)}</span>{" "}
           </div>
-         ))}
+          <div className={classes.currentReview}>
+            <div className={classes.bold}>
+              {" "}
+              {`${review.name}, ${review.date}`}{" "}
+            </div>
+            <div>{review.review}</div>
+          </div>
+        </div>
+      ))}
     </CarouselReviews>
-
   );
-  };
+}
 
 export default StoreReviews;
